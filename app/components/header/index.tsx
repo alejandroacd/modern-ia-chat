@@ -27,7 +27,7 @@ export default function Header() {
   const text = 'Cosmic AI'
 
   return (
-    <header className="p-6 backdrop-blur-xl bg-slate-800/20 flex flex-row">
+    <header className="p-6 rounded-xl backdrop-blur-xl bg-slate-800/20 flex flex-row">
       <motion.p
         className="text-5xl font-light tracking-tighter text-center optimized-metallic-reveal"
         variants={container}

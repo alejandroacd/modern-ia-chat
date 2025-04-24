@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
 <html lang="en" className={`${spaceGrotesk.variable}`}>
   <body
-    className={` min-h-[70dvh] bg-[url(/3.webp)] bg-cover overflow-auto md:overflow-hidden  antialiased  font-sans`} cz-shortcut-listen="true">
+    className={`min-h-[70dvh] bg-[url(/3.webp)] bg-cover overflow-auto md:overflow-hidden  antialiased  font-sans`} cz-shortcut-listen="true">
 
 
     {/* Background Image */}
