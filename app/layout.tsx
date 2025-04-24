@@ -4,7 +4,6 @@ import "./globals.css";
 import Overlay from "./components/overlay";
 import ContentWrapper from "./components/app-wrapper";
 
-
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
@@ -22,21 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable}`}>
-      <body
-        className={`min-h-[70dvh]
-     bg-[url(/3.webp)] 
-     bg-cover 
-     overflow-auto 
-     md:overflow-hidden  
-     antialiased  
-     font-sans`} cz-shortcut-listen="true">
+      <head>
+        <link rel="preload" href="/holograph.avif" as="image" />
+      </head>
+      <body cz-shortcut-listen="true"
+className="min-h-[70dvh] bg-gray-900 bg-[url(/holograph.avif)] bg-cover overflow-auto md:overflow-hidden font-sans">
+        <div className="fixed inset-0 bg-gray-900 z-[-1] transition-opacity duration-300 opacity-0" id="bg-overlay"></div>
+
         <Overlay />
         <ContentWrapper>
           {children}
         </ContentWrapper>
       </body>
     </html>
-
-
   );
 }
