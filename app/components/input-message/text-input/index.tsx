@@ -4,13 +4,15 @@ import React from "react";
 interface TextInputProps {
     input: string;
     onChange: React.Dispatch<React.SetStateAction<string>>;
+    onKeyDown?: React.KeyboardEventHandler<HTMLTextAreaElement>;
 }
-export const TextInput = ({ input, onChange }: TextInputProps) => {
+export const TextInput = ({ input, onChange, onKeyDown}: TextInputProps) => {
     const isLoading = useChatStore((state) => state.isLoading);
     return <Textarea
     rows={1}
     data-has-listeners="true"
     disabled={isLoading}
+    onKeyDown={onKeyDown}
     value={input}
     onChange={(e) => onChange(e.target.value)}
     placeholder="Type a message..."

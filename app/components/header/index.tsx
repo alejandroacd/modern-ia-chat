@@ -1,6 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import ConfigButton from './components/config-button'
+import { useChatStore } from '@/stores/chatStore'
 
 const container = {
   hidden: {},
@@ -25,9 +27,11 @@ const letter = {
 
 export default function Header() {
   const text = 'Cosmic AI'
+  const onClearMessages = useChatStore((state) => state.resetMessages)
+  const hasMessages = useChatStore((state) => state.messages.length > 0)
 
   return (
-    <header className="p-6 rounded-xl backdrop-blur-xl bg-slate-800/20 flex flex-row">
+    <header className="p-6 rounded-xl backdrop-blur-xl bg-slate-800/20 flex items-center justify-between flex-row">
       <motion.p
         className="text-5xl font-light tracking-tighter text-center optimized-metallic-reveal"
         variants={container}
@@ -44,6 +48,7 @@ export default function Header() {
           </motion.span>
         ))}
       </motion.p>
+      <ConfigButton hasMessages={hasMessages} onClearMessages={onClearMessages} />
     </header>
   )
 }

@@ -1,0 +1,14 @@
+/* global.css or tailwind.css */
+.messages::-webkit-scrollbar {
+    width: 6px;
+
+}
+  .messages::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+  }
+  .messages:hover::-webkit-scrollbar-thumb {
+  }
+  .messages::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  

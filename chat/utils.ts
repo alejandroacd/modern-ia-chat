@@ -18,6 +18,9 @@ export const submitMessage = async ({ prompt, setInput }: submitMessageProps) =>
         })
         .catch((error) => {
           console.error(error);
+          useChatStore.getState().addAIMessage(
+            "Sorry, something went wrong :'( Please try again."
+          );
         })
         .finally(() => {
           useChatStore.getState().setIsLoading(false);

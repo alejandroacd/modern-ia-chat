@@ -12,6 +12,5 @@ export async function askAI(message: string) {
     });
 
     const data = await res.json();
-    console.log(data)
     return data
 }
