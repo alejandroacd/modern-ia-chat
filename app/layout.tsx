@@ -31,7 +31,9 @@ export default function RootLayout({
      antialiased  
      font-sans`} cz-shortcut-listen="true">
         <Overlay />
-        <ContentWrapper children={children} />
+        <ContentWrapper>
+          {children}
+        </ContentWrapper>
       </body>
     </html>
 
