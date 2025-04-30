@@ -5,25 +5,23 @@ interface submitMessageProps {
     setInput?: (input: string) => void
 }
 export const submitMessage = async ({ prompt, setInput }: submitMessageProps) => {
-    if (prompt.trim() && !useChatStore.getState().isLoading) {
-      if (setInput) {
-        setInput("");
-      }
-      useChatStore.getState().addUserMessage(prompt);
-      useChatStore.getState().setIsLoading(true);
-      askAI(prompt)
-        .then((response) => {
-          const aiResponse = response
-          useChatStore.getState().addAIMessage(aiResponse);
-        })
-        .catch((error) => {
-          console.error(error);
-          useChatStore.getState().addAIMessage(
-            "Sorry, something went wrong :'( Please try again."
-          );
-        })
-        .finally(() => {
-          useChatStore.getState().setIsLoading(false);
-        });
-    }
+  const trimmedPrompt = prompt.trim();
+  const chatStore = useChatStore.getState();
+
+  if (!trimmedPrompt || chatStore.isLoading) return;
+
+  setInput?.("");
+
+  chatStore.addUserMessage(trimmedPrompt);
+  chatStore.setIsLoading(true);
+
+  try {
+    const response = await askAI(trimmedPrompt);
+    chatStore.addAIMessage(response);
+  } catch (error) {
+    console.error(error);
+    chatStore.addAIMessage("Sorry, something went wrong :'( Please try again.");
+  } finally {
+    chatStore.setIsLoading(false);
   }
+};

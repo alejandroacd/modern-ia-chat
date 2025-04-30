@@ -10,8 +10,8 @@ export default function Question({ question }: { question: string }) {
 
       {/* Main card */}
       <Card onClick={() => submitMessage({ prompt: question })} className="bg-slate-200/5 border  border-slate-800 p-4 md:p-5
-          group-hover:border-indigo-400/30 group-hover:shadow-[0_0_15px_-3px_rgba(192,132,252,0.5)]
-          transition-all duration-200 " >
+          hover:border-indigo-400/30 hover:shadow-[0_0_15px_-3px_rgba(192,132,252,0.5)]
+          transition-all duration-200">
 
         {/* Perfectly visible text */}
         <CardTitle className="text-sm md:text-base font-normal metallic-gradient-text">

@@ -15,7 +15,7 @@ export const TextInput = ({ input, onChange, onKeyDown}: TextInputProps) => {
     onKeyDown={onKeyDown}
     value={input}
     onChange={(e) => onChange(e.target.value)}
-    placeholder="Type a message..."
+    placeholder="Lets talk about something..."
     className={`w-full 
       pr-12 
       py-2   
