@@ -3,7 +3,6 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Overlay from "./components/overlay";
 import ContentWrapper from "./components/layout-wrapper";
-import { Footer } from "./components/footer";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
