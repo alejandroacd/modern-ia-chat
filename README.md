@@ -1,8 +1,8 @@
 # 🌌 Cosmic AI: A Modern AI Assistant Powered by GPT-3 model 🧠
 Cosmic AI is a sleek and minimal AI assistant built with the power of GPT-3 via Magic Loops endpoints. Designed to be fast, responsive, and user-friendly, the app lets users interact with AI in a modern chat-like interface — perfect for quick answers, idea generation, and more.
 
-🔗 Live Demo
-
+ [🔗 Live Demo](https://cosmic-ai-chat.vercel.app)
+![image](https://github.com/user-attachments/assets/0bca3d67-548d-4b62-9d92-e7e4bebe4772)
 
 ## Features and key points ✨
 -  ### GPT-3 Intelligence:
